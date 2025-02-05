@@ -1,0 +1,13 @@
+
+services:
+  catalogdb:
+    image: postgre
+         
+  eshop.catalog.api:
+    image: ${DOCKER_REGISTRY-}eshopcatalogapi
+    build:
+      context: .
+      dockerfile: Services/Eshop.Catalog.Api/Dockerfile
+
+volumes:
+  postgres_catalog:
